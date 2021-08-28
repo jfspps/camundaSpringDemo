@@ -1,0 +1,21 @@
+{
+  "type": "default",
+  "components": [
+    {
+      "key": "accountUsername",
+      "label": "Account username",
+      "type": "textfield",
+      "description": "Account's username",
+      "validate": {
+        "required": true,
+        "minLength": 8
+      }
+    },
+    {
+      "key": "description",
+      "label": "Application description",
+      "type": "textfield",
+      "description": "A brief summary of the software which requires username and password"
+    }
+  ]
+}
