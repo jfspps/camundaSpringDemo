@@ -1,5 +1,6 @@
 package com.example.camundaSpring;
 
+import org.camunda.bpm.engine.delegate.BpmnError;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
@@ -20,8 +21,9 @@ public class BowToAdministrator implements JavaDelegate {
         String description = (String) delegateExecution.getVariable("description");
         System.out.println("Description found: " + description);
 
-        if (username.isBlank()){
-            password = "abcdefg";
+        if (description.equals("Hell on Earth")){
+            System.out.println("You are calling the Devil!");
+            throw new BpmnError("The_Devil", "The Devil is here!!!");
         } else
             password = "admin";
 
